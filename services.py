@@ -1,6 +1,6 @@
 from db import engine 
 from table import user , address 
-from sqlalchemy import insert , select , update , delete 
+from sqlalchemy import insert , select , update , delete , desc
 
 
 # insert or create user 
@@ -46,3 +46,18 @@ def user_delete(id:int):
         stmt = delete(user).where(user.c.id == id)
         conn.execute(stmt)
         conn.commit() 
+
+
+def user_order_by_name():
+    with engine.connect() as conn:
+        stmt = select(user).order_by(desc(user.c.name))
+        result = conn.execute(stmt).fetchall()
+        return result
+    
+
+
+def user_order_by_id():
+    with engine.connect() as conn:
+        stmt = select(user).order_by(desc(user.c.id))
+        result = conn.execute(stmt).fetchall()
+        return result

@@ -13,4 +13,8 @@ from services import *
 
 # print(user_update(1,"rishikesh kumar")
 
-user_delete(1)
+# user_delete(1)
+
+# print(user_order_by_name()) 
+
+print(user_order_by_id()) 
