@@ -1,0 +1,23 @@
+for generate automatic fields in sqlalchemy : - 
+
+
+first run this command : -  alembic init alembic 
+
+alembic/env.py 
+
+# target_metadata = None
+target_metadata = metadata 
+
+import metadata , like that 
+
+from table import metadata 
+
+
+alembic/ini: - 
+
+
+sqlalchemy.url = sqlite:///./db.sqlite3
+
+
+alembic revision --autogenerate -m "Add location column to user table"
+alembic upgrade head

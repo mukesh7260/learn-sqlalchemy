@@ -8,7 +8,10 @@ user = Table(
     Column("id", Integer, primary_key=True),
     Column("name", String(50)),
     Column("email", String(50)),
-    Column("password", String(50))
+    Column("password", String(50)),
+    Column("location", String(100)),
+    Column("Qualification", String(50))
+
 ) 
 
 address = Table(
